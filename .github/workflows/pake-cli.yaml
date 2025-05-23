@@ -113,7 +113,7 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             node_modules/pake-cli/src-tauri/target/
-            node_modules/pake-cli/output/
+            node_modules/pake-cli/output/*
           key: ${{ inputs.platform }}-cargo-${{ hashFiles('node_modules/pake-cli/src-tauri/Cargo.lock') }}
 
       - name: Install dependencies
@@ -155,5 +155,5 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             node_modules/pake-cli/src-tauri/target/
-            node_modules/pake-cli/output/
+            node_modules/pake-cli/output/*
           key: ${{ inputs.platform }}-cargo-${{ hashFiles('node_modules/pake-cli/src-tauri/Cargo.lock') }}
