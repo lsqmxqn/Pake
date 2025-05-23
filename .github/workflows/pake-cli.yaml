@@ -113,7 +113,6 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             node_modules/pake-cli/src-tauri/target/
-            node_modules/pake-cli/output/*
           key: ${{ inputs.platform }}-cargo-${{ hashFiles('node_modules/pake-cli/src-tauri/Cargo.lock') }}
 
       - name: Install dependencies
@@ -142,7 +141,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: output-${{ inputs.platform }}.zip
-          path: node_modules/pake-cli/output/
+          path: node_modules/pake-cli/output/*
           retention-days: 3
 
       - name: Rust cache store
@@ -155,5 +154,4 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             node_modules/pake-cli/src-tauri/target/
-            node_modules/pake-cli/output/*
           key: ${{ inputs.platform }}-cargo-${{ hashFiles('node_modules/pake-cli/src-tauri/Cargo.lock') }}
